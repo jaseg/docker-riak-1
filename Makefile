@@ -1,4 +1,4 @@
-all: pipework
+all:
 
 pipework:
 	curl -s https://raw.github.com/jpetazzo/pipework/master/pipework > ./bin/pipework
@@ -8,7 +8,7 @@ pipework:
 	sudo /etc/init.d/procps restart >/dev/null
 
 riak-container:
-	sudo docker build -t "hectcastro/riak" .
+	sudo docker build -t "$(shell git config user.name)/riak" .
 
 start-cluster:
 	./bin/start-cluster.sh
